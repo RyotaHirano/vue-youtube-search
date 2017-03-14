@@ -1,7 +1,7 @@
 <template>
   <div>
     <list-item
-      v-for="(video, key) in videos"
+      v-for="(video, key) in filteringVideos"
       :video="video"
       :key="key"
     >
