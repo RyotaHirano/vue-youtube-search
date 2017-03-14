@@ -1,15 +1,14 @@
 <template>
   <div class="c-list-items">
-    <list-item
-      class="c-list-item"
+    <list-view
       :videos="hitVideos"
     >
-    </list-item>
+    </list-view>
   </div>
 </template>
 
 <script>
-  import ListItem from '../components/ListItem'
+  import ListView from '../components/ListView'
 
   export default {
     name: 'items',
@@ -19,7 +18,7 @@
       }
     },
     components: {
-      ListItem
+      ListView
     }
   }
 </script>
