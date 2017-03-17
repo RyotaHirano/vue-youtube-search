@@ -25,10 +25,3 @@ new Vue({
 //   console.log('none');
 // }
 //
-// fetch(`${API_YOUTUBE_URL}&key=${API_YOUTUBE_KEY}`)
-//   .then((response) => {
-//     // response.json() is Promise Object
-//     response.json().then(data => {
-//       data.items.length > 0 ? createList(data.items) : deleteList() ;
-//     })
-//   })

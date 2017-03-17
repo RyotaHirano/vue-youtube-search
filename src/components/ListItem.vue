@@ -1,6 +1,7 @@
 <template>
   <div class="c-list-item">
-    <div class="c-movie">
+    <div class="c-movie"
+    >
       <h2>{{video.title}}</h2>
     </div>
   </div>

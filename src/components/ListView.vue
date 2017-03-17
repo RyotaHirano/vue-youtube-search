@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="c-list-items">
     <list-item
-      v-for="(video, key) in filteringVideos"
-      :video="video"
+      v-for="(video, key) in fetchVideos"
+      :video="video.snippet"
       :key="key"
     >
     </list-item>
@@ -17,10 +17,9 @@
       videos: Array
     },
     computed: {
-      filteringVideos() {
-        let videos = this.videos.concat()
-
-        return videos
+      fetchVideos: function() {
+        this.$store.dispatch('fetchYouTubeVideos')
+        return this.$store.state.videos
       }
     },
     components: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="c-list-items">
+  <div class="c-videos">
     <list-view
       :videos="hitVideos"
     >
