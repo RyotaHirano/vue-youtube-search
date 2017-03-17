@@ -3,6 +3,7 @@
     <list-item
       v-for="(video, key) in fetchVideos"
       :video="video.snippet"
+      :id="video.id.videoId"
       :key="key"
     >
     </list-item>
