@@ -22,3 +22,11 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .c-list-item {
+  & + .c-list-item {
+        margin-top: 20px;
+      }
+  }
+</style>
