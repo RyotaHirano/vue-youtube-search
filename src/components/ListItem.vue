@@ -23,7 +23,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .c-list-item {
   & + .c-list-item {
         margin-top: 20px;

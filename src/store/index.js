@@ -8,17 +8,21 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    videos: []
+    videos: [],
+    searchText: ''
   },
   mutations: {
     fetchYouTubeVideos(state) {
-      fetch(`${API_YOUTUBE_URL}&key=${API_YOUTUBE_KEY}`)
+      fetch(`${API_YOUTUBE_URL}&key=${API_YOUTUBE_KEY}&q=${state.searchText}`)
         .then((response) => {
           // response.json() is Promise Object
           response.json().then(data => {
             return data.items.length > 0 ? state.videos = data.items : false ;
           })
         })
+    },
+    updateSearchText(state, text) {
+      state.searchText = text
     }
   },
   actions: {
