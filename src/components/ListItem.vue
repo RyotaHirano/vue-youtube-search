@@ -29,4 +29,11 @@
         margin-top: 20px;
       }
   }
+
+  .c-movie {
+    h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+  }
 </style>
