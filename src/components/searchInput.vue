@@ -1,19 +1,17 @@
 <template>
-  <input type="text" v-model="searchText">
+  <input type="text" @input="updateSearchText">
 </template>
 
 <script>
+  import { debounce } from 'lodash'
+  const inputDebounceTimer = 1000;
+
   export default {
     name: 'search-input',
-    computed: {
-      searchText: {
-        get() {
-          return this.$store.state.searchText
-        },
-        set(value) {
-          this.$store.commit('updateSearchText', value)
-        }
-      }
+    methods: {
+      updateSearchText: debounce(function(e) {
+        this.$store.commit('updateSearchText', e.target.value)
+      }, inputDebounceTimer)
     }
   }
 </script>
