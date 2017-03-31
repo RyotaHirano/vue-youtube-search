@@ -25,9 +25,9 @@
 
 <style lang="scss" scoped>
   .c-list-item {
-  & + .c-list-item {
-        margin-top: 20px;
-      }
+    & + .c-list-item {
+      margin-top: 20px;
+    }
   }
 
   .c-movie {
@@ -35,16 +35,5 @@
       font-size: 20px;
       margin: 0;
     }
-  }
-
-  /* transition */
-  .slide-fade-enter, .slide-fade-leave-to {
-    opacity: 1;
-  }
-  .slide-fade-enter-active {
-    transition: all .5s ease;
-  }
-  .slide-fade-leave-active {
-    opacity: 0;
   }
 </style>
