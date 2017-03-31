@@ -36,4 +36,15 @@
       margin: 0;
     }
   }
+
+  /* transition */
+  .slide-fade-enter, .slide-fade-leave-to {
+    opacity: 1;
+  }
+  .slide-fade-enter-active {
+    transition: all .5s ease;
+  }
+  .slide-fade-leave-active {
+    opacity: 0;
+  }
 </style>
