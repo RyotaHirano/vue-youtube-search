@@ -1,5 +1,5 @@
 <template>
-  <input type="text" @input="updateSearchText">
+  <input class="input" type="text" placeholder="search keyword" @input="updateSearchText">
 </template>
 
 <script>
@@ -15,3 +15,12 @@
     }
   }
 </script>
+
+<style lang="scss" >
+  .input {
+    font-size: 18px;
+    line-height: 20px;
+    padding: 10px 6px;
+    outline: none;
+  }
+</style>
