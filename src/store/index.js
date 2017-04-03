@@ -28,6 +28,9 @@ const store = new Vuex.Store({
   actions: {
     fetchYouTubeVideos({ commit }) {
       commit('fetchYouTubeVideos')
+    },
+    updateSearchText({ commit }, text) {
+      commit('updateSearchText', text)
     }
   }
 })

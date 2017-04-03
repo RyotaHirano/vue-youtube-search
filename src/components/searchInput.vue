@@ -10,7 +10,8 @@
     name: 'search-input',
     methods: {
       updateSearchText: debounce(function(e) {
-        this.$store.commit('updateSearchText', e.target.value)
+        this.$store.dispatch('updateSearchText', e.target.value)
+        this.$store.dispatch('fetchYouTubeVideos');
       }, inputDebounceTimer)
     }
   }

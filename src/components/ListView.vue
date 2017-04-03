@@ -29,7 +29,6 @@
     },
     computed: {
       fetchVideos: function() {
-        this.$store.dispatch('fetchYouTubeVideos');
         return this.$store.state.videos
       }
     },
