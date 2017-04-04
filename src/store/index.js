@@ -10,6 +10,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     videos: [],
+    totalVideolength: 0,
     searchText: ''
   },
   mutations: {
@@ -18,6 +19,7 @@ const store = new Vuex.Store({
         .then((response) => {
           // response.json() is Promise Object
           response.json().then(data => {
+            data.items.length > 0 ? state.totalVideolength = data.items.length : state.totalVideolength = 0 ;
             return data.items.length > 0 ? state.videos = data.items : false ;
           })
         })

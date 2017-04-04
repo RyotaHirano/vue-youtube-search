@@ -3,7 +3,7 @@
     <div class="c-movie"
     >
       <h2>{{video.title}}</h2>
-      <iframe width="560" height="315" :src="youtubeUrl" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" :src="youtubeUrl" frameborder="0" allowfullscreen v-on:load="test()"></iframe>
     </div>
   </div>
 </template>
@@ -12,12 +12,23 @@
   export default {
     props: {
       video: Object,
-      id: String
+      id: String,
     },
     computed: {
       youtubeUrl: function() {
-        const base = 'https://www.youtube.com/embed/'
-        return `${base}/${this.id}`
+        const base = 'https://www.youtube.com/embed/';
+        const url = `${base}${this.id}`;
+        this.allVideoIsLoaded(url);
+        return url
+      }
+    },
+    methods: {
+      allVideoIsLoaded: function(url) {
+        const totalVideo = this.$store.state.totalVideolength;
+        console.log(url);
+      },
+      test: function() {
+        console.log('test');
       }
     }
   }
