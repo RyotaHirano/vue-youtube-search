@@ -3,6 +3,7 @@
     name="slide-fade"
     tag="div"
     class="c-list-items"
+    v-if="this.$store.state.allowShowVideos"
     v-bind:css="false"
     v-on:before-enter="beforeEnter"
     v-on:enter="show"
@@ -33,6 +34,10 @@
       }
     },
     methods: {
+      allowShowVideos: function() {
+        console.log('test');
+        return this.$store.state.allowShowVideos
+      },
       beforeEnter: function(el) {
         el.style.opacity = 0
       },

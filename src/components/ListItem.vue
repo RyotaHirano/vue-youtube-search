@@ -3,7 +3,7 @@
     <div class="c-movie"
     >
       <h2>{{video.title}}</h2>
-      <iframe width="560" height="315" :src="youtubeUrl" frameborder="0" allowfullscreen v-on:load="test()"></iframe>
+      <iframe width="560" height="315" :src="youtubeUrl" v-on:load="videoLoaded()" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </template>
@@ -17,18 +17,13 @@
     computed: {
       youtubeUrl: function() {
         const base = 'https://www.youtube.com/embed/';
-        const url = `${base}${this.id}`;
-        this.allVideoIsLoaded(url);
-        return url
+        return `${base}${this.id}`
       }
     },
     methods: {
-      allVideoIsLoaded: function(url) {
-        const totalVideo = this.$store.state.totalVideolength;
-        console.log(url);
-      },
-      test: function() {
-        console.log('test');
+      videoLoaded: function() {
+        this.$store.dispatch('updateLoadedVideoNum');
+        parseInt(this.$store.state.loadedVideoNum, 10) === parseInt(this.$store.state.videos.length, 10) ? this.$store.dispatch('allowShowVideos') : false ;
       }
     }
   }

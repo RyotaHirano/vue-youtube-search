@@ -10,7 +10,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     videos: [],
-    totalVideolength: 0,
+    loadedVideoNum: 0,
+    allowShowVideos: false,
     searchText: ''
   },
   mutations: {
@@ -19,13 +20,20 @@ const store = new Vuex.Store({
         .then((response) => {
           // response.json() is Promise Object
           response.json().then(data => {
-            data.items.length > 0 ? state.totalVideolength = data.items.length : state.totalVideolength = 0 ;
+            state.loadedVideoNum = 0;
+            state.allowShowVideos = false;
             return data.items.length > 0 ? state.videos = data.items : false ;
           })
         })
     },
     updateSearchText(state, text) {
       state.searchText = text
+    },
+    updateLoadedVideoNum(state) {
+      state.loadedVideoNum += 1
+    },
+    allowShowVideos(state) {
+      state.allowShowVideos = true
     }
   },
   actions: {
@@ -34,6 +42,12 @@ const store = new Vuex.Store({
     },
     updateSearchText({ commit }, text) {
       commit('updateSearchText', text)
+    },
+    updateLoadedVideoNum({ commit }) {
+      commit('updateLoadedVideoNum')
+    },
+    allowShowVideos({ commit }) {
+      commit('allowShowVideos')
     }
   }
 })
