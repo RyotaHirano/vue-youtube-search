@@ -21,11 +21,19 @@
     },
     methods: {
       chkSearchInputlength: function(e) {
-        e.target.value !== '' ? this.$store.dispatch('isLoadingVideos', true) : this.$store.dispatch('isLoadingVideos', false);
+        this.$store.dispatch('resetFetchVideos');
+        this.$store.dispatch('isLoadingVideos', false);
+        this.$store.dispatch('allowShowVideos', false);
+
+        if (e.target.value !== '') {
+          this.$store.dispatch('isLoadingVideos', true)
+        }
       },
       updateSearchText: debounce(function(e) {
-        this.$store.dispatch('updateSearchText', e.target.value);
-        this.$store.dispatch('fetchYouTubeVideos');
+        if(e.target.value !== '') {
+          this.$store.dispatch('updateSearchText', e.target.value);
+          this.$store.dispatch('fetchYouTubeVideos');
+        }
       }, inputDebounceTimer),
       focusInput: function() {
         this.$store.dispatch('isFocusSearchInput', true)

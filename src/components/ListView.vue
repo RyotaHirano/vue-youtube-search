@@ -1,6 +1,16 @@
 <template>
   <div>
     <div
+      v-show="!allowShowVideos && !isLoadingVideos"
+    >
+      <p>Please input search keywords.</p>
+    </div>
+    <div
+      v-show="!allowShowVideos && isLoadingVideos"
+    >
+      <p>Loading...</p>
+    </div>
+    <div
       class="c-list-items"
     >
       <list-item
@@ -11,16 +21,6 @@
         :data-index="key"
       >
       </list-item>
-    </div>
-    <div
-      v-show="!allowShowVideos && !isLoadingVideos"
-    >
-      <p>Please input search keywords.</p>
-    </div>
-    <div
-      v-show="!allowShowVideos && isLoadingVideos"
-    >
-      <p>Loading...</p>
     </div>
   </div>
 </template>

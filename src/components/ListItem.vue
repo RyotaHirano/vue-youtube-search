@@ -29,7 +29,7 @@
     methods: {
       videoLoaded: function() {
         this.$store.dispatch('updateLoadedVideoNum');
-        return parseInt(this.$store.state.loadedVideoNum, 10) === parseInt(this.$store.state.videos.length, 10) ? this.$store.dispatch('allowShowVideos') : false ;
+        return parseInt(this.$store.state.loadedVideoNum, 10) === parseInt(this.$store.state.videos.length, 10) ? this.$store.dispatch('allowShowVideos', true) : false ;
       }
     }
   }

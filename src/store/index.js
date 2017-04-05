@@ -28,14 +28,17 @@ const store = new Vuex.Store({
           })
         })
     },
+    resetFetchVideos(state) {
+      state.videos = []
+    },
     updateSearchText(state, text) {
       state.searchText = text
     },
     updateLoadedVideoNum(state) {
       state.loadedVideoNum += 1
     },
-    allowShowVideos(state) {
-      state.allowShowVideos = true
+    allowShowVideos(state, bool) {
+      state.allowShowVideos = bool
     },
     isFocusSearchInput(state, bool) {
       state.isFocusSearchInput = bool
@@ -48,14 +51,17 @@ const store = new Vuex.Store({
     fetchYouTubeVideos({ commit }) {
       commit('fetchYouTubeVideos')
     },
+    resetFetchVideos({ commit }) {
+      commit('resetFetchVideos')
+    },
     updateSearchText({ commit }, text) {
       commit('updateSearchText', text)
     },
     updateLoadedVideoNum({ commit }) {
       commit('updateLoadedVideoNum')
     },
-    allowShowVideos({ commit }) {
-      commit('allowShowVideos')
+    allowShowVideos({ commit }, bool) {
+      commit('allowShowVideos', bool)
     },
     isFocusSearchInput({ commit }, bool) {
       commit('isFocusSearchInput', bool)
