@@ -2,7 +2,7 @@
   <div class="c-input-wrapper"
        :class="inputWrapClassObject"
   >
-    <input class="c-input" type="text" placeholder="search keyword..." @input="updateSearchText" v-on:focus="focusInput()" v-on:focusout="focusoutInput()">
+    <input class="c-input" type="text" placeholder="search keyword..." v-on:keyup="chkSearchInputlength($event)" @input="updateSearchText" v-on:focus="focusInput()" v-on:focusout="focusoutInput()">
   </div>
 </template>
 
@@ -14,13 +14,15 @@
     name: 'search-input',
     computed: {
       inputWrapClassObject: function() {
-        console.log(this.isfocus);
         return {
           'is-focus': this.$store.state.isFocusSearchInput
         }
       },
     },
     methods: {
+      chkSearchInputlength: function(e) {
+        e.target.value !== '' ? this.$store.dispatch('isLoadingVideos', true) : this.$store.dispatch('isLoadingVideos', false);
+      },
       updateSearchText: debounce(function(e) {
         this.$store.dispatch('updateSearchText', e.target.value);
         this.$store.dispatch('fetchYouTubeVideos');
@@ -35,7 +37,7 @@
   }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
   @mixin inputBorderBottom {
     content: '';
     display: inline-block;

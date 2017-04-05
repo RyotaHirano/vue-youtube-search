@@ -13,7 +13,12 @@
       </list-item>
     </div>
     <div
-      v-show="!allowShowVideos"
+      v-show="!allowShowVideos && !isLoadingVideos"
+    >
+      <p>Please input search keywords.</p>
+    </div>
+    <div
+      v-show="isLoadingVideos"
     >
       <p>Loading...</p>
     </div>
@@ -35,7 +40,10 @@
       },
       allowShowVideos: function() {
         return this.$store.state.allowShowVideos
-      }
+      },
+      isLoadingVideos: function() {
+        return this.$store.state.isLoadingVideos
+      },
     },
     components: {
       'list-item': ListItem
