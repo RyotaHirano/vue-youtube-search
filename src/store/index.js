@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import 'whatwg-fetch'
 
 const API_YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3/search?part=snippet';
-const API_YOUTUBE_KEY = 'AIzaSyDt1LGyISVebRRJqw7lbe5UA_9ROF48v54';
+const API_YOUTUBE_KEY = 'AIzaSyD3UHH4HeY7ki2njecykZ2xMx9xToqgYNM';
 
 Vue.use(Vuex)
 
