@@ -26,6 +26,7 @@ const store = new Vuex.Store({
             state.allowShowVideos = false;
             return data.items.length > 0 ? state.videos = data.items : false ;
           })
+        })
     },
     resetFetchVideos(state) {
       state.videos = []
