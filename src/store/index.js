@@ -12,7 +12,8 @@ const store = new Vuex.Store({
     videos: [],
     loadedVideoNum: 0,
     allowShowVideos: false,
-    searchText: ''
+    searchText: '',
+    isFocusSearchInput: false,
   },
   mutations: {
     fetchYouTubeVideos(state) {
@@ -34,7 +35,10 @@ const store = new Vuex.Store({
     },
     allowShowVideos(state) {
       state.allowShowVideos = true
-    }
+    },
+    isFocusSearchInput(state, bool) {
+      state.isFocusSearchInput = bool
+    },
   },
   actions: {
     fetchYouTubeVideos({ commit }) {
@@ -48,6 +52,9 @@ const store = new Vuex.Store({
     },
     allowShowVideos({ commit }) {
       commit('allowShowVideos')
+    },
+    isFocusSearchInput({ commit }, bool) {
+      commit('isFocusSearchInput', bool)
     }
   }
 })
