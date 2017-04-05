@@ -18,12 +18,11 @@
       <p>Please input search keywords.</p>
     </div>
     <div
-      v-show="isLoadingVideos"
+      v-show="!allowShowVideos && isLoadingVideos"
     >
       <p>Loading...</p>
     </div>
   </div>
-
 </template>
 
 <script>
