@@ -1,9 +1,11 @@
+// @flow
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 import 'whatwg-fetch'
 
-const API_YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
-const API_YOUTUBE_KEY = 'AIzaSyD3UHH4HeY7ki2njecykZ2xMx9xToqgYNM';
+const API_YOUTUBE_URL: string = 'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
+const API_YOUTUBE_KEY: string = 'AIzaSyD3UHH4HeY7ki2njecykZ2xMx9xToqgYNM';
 
 Vue.use(Vuex)
 
