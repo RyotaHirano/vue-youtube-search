@@ -1,9 +1,6 @@
-<template>
-  <div class="c-input-wrapper"
-       :class="inputWrapClassObject"
-  >
-    <input class="c-input" type="text" placeholder="search keyword..." v-on:keyup="chkSearchInputlength($event)" @input="updateSearchText" v-on:focus="focusInput()" v-on:focusout="focusoutInput()">
-  </div>
+<template lang="pug">
+  .c-input-wrapper(:class="inputWrapClassObject")
+    input.c-input(type="text" placeholder="search keyword..." v-on:keyup="chkSearchInputlength($event)" @input="updateSearchText" v-on:focus="focusInput()" v-on:focusout="focusoutInput()")
 </template>
 
 <script>
