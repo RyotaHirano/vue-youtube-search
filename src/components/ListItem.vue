@@ -2,7 +2,7 @@
   .c-list-item(:class="listItemClassObject")
     .c-movie
       h2 {{video.title}}
-      iframe(width="560" height="315" v-bind  :src="youtubeUrl" v-on:load="videoLoaded()" frameborder="0" allowfullscreen)
+      iframe(width="560" height="315" v-bind:src="youtubeUrl" v-on:load="videoLoaded()" frameborder="0" allowfullscreen)
 </template>
 
 <script>
