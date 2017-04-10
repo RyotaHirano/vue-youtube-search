@@ -6,9 +6,14 @@
       <p>Please input search keywords.</p>
     </div>
     <div
-      v-show="!allowShowVideos && isLoadingVideos"
+      class="preloader"
+      v-show="isLoadingVideos"
     >
-      <p>Loading...</p>
+      <div class="l-preloader"
+           :class="pseudoLoaderClass()"
+      >
+        <span class="c-preloader"></span>
+      </div>
     </div>
     <div
       class="c-list-items"
@@ -26,7 +31,6 @@
 </template>
 
 <script>
-  import Velocity from 'velocity-animate'
   import ListItem from './ListItem'
 
   export default {
@@ -44,8 +48,84 @@
         return this.$store.state.isLoadingVideos
       },
     },
+    methods: {
+      pseudoLoaderClass: function() {
+        return {
+          'fade-out': this.$store.state.allowShowVideos
+        }
+      },
+    },
     components: {
       'list-item': ListItem
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  @mixin pseudo-preloader($width: 30px, $height: 30px, $bgc: #000, $animation-duration: 1.2s, $animation-delay: 0s) {
+    content: '';
+    width: $width;
+    height: $height;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $bgc;
+    opacity: 0;
+    transform: scale(0);
+    animation-name: preloading;
+    animation-duration: $animation-duration;
+    animation-delay: $animation-delay;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  $preloader-width: 60px;
+  $preloader-height: 60px;
+
+  // -----------------------------------
+
+  .preloader {
+    pointer-events: none;
+  }
+
+  .l-preloader {
+    width: $preloader-width;
+    height: $preloader-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1;
+    transition: opacity .8s ease;
+
+    &.fade-out {
+      opacity: 0;
+    }
+  }
+
+  .c-preloader {
+    width: $preloader-width;
+    height: $preloader-height;
+    position: relative;
+
+    &::before {
+      @include pseudo-preloader($preloader-width, $preloader-height);
+    }
+    &::after {
+      @include pseudo-preloader($preloader-width, $preloader-height, #000, 1.2s, -.6s);
+    }
+  }
+
+  @keyframes preloading {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1)
+    }
+  }
+</style>
