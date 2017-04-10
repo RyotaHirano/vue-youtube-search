@@ -79,8 +79,8 @@
     animation-iteration-count: infinite;
   }
 
-  $preloader-width: 60px;
-  $preloader-height: 60px;
+  $preloader-width: 80px;
+  $preloader-height: 80px;
 
   // -----------------------------------
 
