@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div
+    <div class="l-none-videos-msg"
       v-show="!allowShowVideos && !isLoadingVideos"
     >
-      <p>Please input search keywords.</p>
+      <p class="c-none-videos-msg">Please input search keyword.</p>
     </div>
     <div
       class="preloader"
@@ -84,6 +84,25 @@
 
   // -----------------------------------
 
+  // none videos
+  .l-none-videos-msg {
+    max-width: 850px;
+    margin: 40px auto;
+
+    @media screen and (max-width: 960px) {
+      width: auto;
+      margin: 0;
+      padding: 0 15px;
+    }
+  }
+
+  .c-none-videos-msg {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  // preloader
   .preloader {
     pointer-events: none;
   }
@@ -128,4 +147,19 @@
       transform: scale(1)
     }
   }
+
+  // c-list-items
+  .c-list-items {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 30px;
+
+    @media screen and (max-width: 960px) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 0 15px;
+    }
+  }
+
 </style>

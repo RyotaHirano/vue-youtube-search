@@ -1,7 +1,7 @@
 <template lang="pug">
   .c-list-item(:class="listItemClassObject")
+    h2.c-movie-title {{video.title}}
     .c-movie
-      h2 {{video.title}}
       iframe(width="560" height="315" v-bind:src="youtubeUrl" v-on:load="videoLoaded()" frameborder="0" allowfullscreen)
 </template>
 
@@ -39,18 +39,53 @@
 
 <style lang="scss" scoped>
   .c-list-item {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
     opacity: 0;
     transition: none;
     transition-delay: 0s;
+
+    @media screen and (max-width: 960px) {
+      max-width: none;
+    }
+
     & + .c-list-item {
-      margin-top: 20px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 2px solid #ddd;
+
+      @media screen and (max-width: 960px) {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+      }
+    }
+  }
+
+  .c-movie-title {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0 0 5px;
+    display: inline-block;
+
+    @media screen and (max-width: 960px) {
+      font-size: 2.4vw;
     }
   }
 
   .c-movie {
-    h2 {
-      font-size: 20px;
-      margin: 0;
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding-top: 56.65%;
+
+    iframe {
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
     }
   }
 

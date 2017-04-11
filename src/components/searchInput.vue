@@ -55,7 +55,10 @@
   }
 
   .c-input-wrapper {
-    display: inline-block;
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto 0;
+    display: block;
     position: relative;
     &::before {
       @include inputBorderBottom;
@@ -76,13 +79,21 @@
         transform: scaleX(1);
       }
     }
+
+    @media screen and (max-width: 960px) {
+      width: auto;
+      max-width: none;
+      margin: 0 15px;
+    }
   }
 
   .c-input {
-    font-size: 18px;
-    line-height: 20px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
     padding: 10px 6px;
     outline: none;
     border: none;
+    font-family: 'Roboto Mono', monospace;
   }
 </style>
