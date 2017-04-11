@@ -5,7 +5,8 @@
   ],
   "plugins": [
     "transform-runtime",
-    "babel-plugin-transform-flow-strip-types"
+    "babel-plugin-transform-flow-strip-types",
+    "babel-plugin-espower"
   ],
   "comments": false,
   "env": {
