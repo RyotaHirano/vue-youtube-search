@@ -26,6 +26,7 @@ module.exports = {
     }
   },
   module: {
+    exprContextCritical: false, // for https://github.com/power-assert-js/babel-plugin-espower/issues/14
     rules: [
       {
         test: /\.vue$/,

@@ -5,13 +5,17 @@
   ],
   "plugins": [
     "transform-runtime",
-    "babel-plugin-transform-flow-strip-types",
-    "babel-plugin-espower"
+    "babel-plugin-espower",
+    "babel-plugin-transform-flow-strip-types"
   ],
   "comments": false,
   "env": {
     "test": {
-      "presets": ["env", "stage-2"],
+      "presets": [
+        "env",
+        "stage-2",
+        "power-assert"
+      ],
       "plugins": [ "istanbul" ]
     }
   }
