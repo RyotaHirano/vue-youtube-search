@@ -8,7 +8,15 @@ export default function fetchYouTubeVideos(state) {
       return response.json().then(data => {
         state.loadedVideoNum = 0;
         state.allowShowVideos = false;
-        return data.items.length > 0 ? state.videos = data.items : false ;
+        if(data.items.length > 0) {
+          state.hitVideo = true;
+          state.videos = data.items
+        } else {
+          state.videos = [];
+          state.isLoadingVideos = false;
+          state.hitVideo = false;
+        }
+        return state.videos;
       })
     })
 }

@@ -3,7 +3,8 @@
     <div class="l-none-videos-msg"
       v-show="!allowShowVideos && !isLoadingVideos"
     >
-      <p class="c-none-videos-msg">Please input search keyword.</p>
+      <p class="c-none-videos-msg" v-show="!hasSearchText">Please input search keyword.</p>
+      <p class="c-none-videos-msg" v-show="hasSearchText">No results for <span class="u-strong">{{this.$store.state.searchText}}</span></p>
     </div>
     <div
       class="preloader"
@@ -46,6 +47,9 @@
       },
       isLoadingVideos: function() {
         return this.$store.state.isLoadingVideos
+      },
+      hasSearchText: function() {
+        return this.$store.state.searchText.length > 0 ? true : false ;
       },
     },
     methods: {
@@ -162,4 +166,8 @@
     }
   }
 
+  .u-strong {
+    font-weight: bold;
+    text-decoration: underline;
+  }
 </style>

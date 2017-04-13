@@ -39,6 +39,7 @@ const store = new Vuex.Store({
     searchText: '',
     isFocusSearchInput: false,
     isLoadingVideos: false,
+    hitVideo: false,
   },
   mutations,
   actions: {

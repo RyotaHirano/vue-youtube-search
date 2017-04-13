@@ -16,7 +16,7 @@
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 
   html, body {
     margin: 0;
