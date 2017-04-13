@@ -104,6 +104,9 @@
     margin: 0;
     font-size: 16px;
     line-height: 1.6;
+    @media screen and (max-width: 960px) {
+      margin-top: 15px;
+    }
   }
 
   // preloader
