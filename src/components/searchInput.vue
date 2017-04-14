@@ -2,7 +2,7 @@
   <div class="c-input-wrapper"
        :class="inputWrapClassObject"
   >
-    <input type="text" class="c-input" placeholder="search keyword..." v-on:keyup="chkSearchInputlength($event)" @input="updateSearchText" v-on:focus="focusInput()" v-on:focusout="focusoutInput()">
+    <input type="text" class="c-input" placeholder="search keyword..." v-on:input="chkSearchInputlength($event)" @input="updateSearchText" v-on:focus="focusInput()" v-on:focusout="focusoutInput()">
   </div>
 </template>
 
@@ -24,6 +24,7 @@
         this.$store.dispatch('resetFetchVideos');
         this.$store.dispatch('isLoadingVideos', false);
         this.$store.dispatch('allowShowVideos', false);
+        this.$store.dispatch('updateSearchText', e.target.value);
 
         if (e.target.value !== '') {
           this.$store.dispatch('isLoadingVideos', true)
@@ -31,7 +32,6 @@
       },
       updateSearchText: debounce(function(e) {
         if(e.target.value !== '') {
-          this.$store.dispatch('updateSearchText', e.target.value);
           this.$store.dispatch('fetchYouTubeVideos');
         }
       }, inputDebounceTimer),
