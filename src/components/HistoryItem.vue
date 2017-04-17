@@ -14,6 +14,10 @@
 
 <style lang="scss" scoped>
   .c-search-item {
-
+    font-size: 14px;
+    font-style: italic;
+    & + & {
+      margin-top: 5px;
+    }
   }
 </style>
