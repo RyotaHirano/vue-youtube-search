@@ -16,7 +16,7 @@ deployment:
       - cp -f -R dist/* docs
       - git config --global user.name  "CircleCI"
       - git config --global user.email "circleci@gh-pages.com"
-      - git add docs
+      - git add .
       - git commit -m 'build GitHubPaged on circle ci'
       - git push origin master -f
 test:
