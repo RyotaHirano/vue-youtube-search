@@ -2,6 +2,9 @@
 
 > vue-cli sample project.
 
+## DEMO
+https://ryotahirano.github.io/vue-youtube-gallery/
+
 ## Build Setup
 
 ``` bash
