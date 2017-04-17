@@ -21,4 +21,4 @@ deployment:
       - git push origin master -f
 test:
   override:
-    - yarn run unit && yarn run type
+    - yarn run test
