@@ -13,7 +13,7 @@ deployment:
     branch: master
     commands:
       - yarn run build
-      - cp -f -R dist docs
+      - cp -f -R dist/* docs
       - git config --global user.name  "CircleCI"
       - git config --global user.email "circleci@gh-pages.com"
       - git add docs
