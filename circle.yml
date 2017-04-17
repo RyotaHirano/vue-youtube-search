@@ -11,5 +11,5 @@ deployment:
       - yarn run build
       - cp -f -R dist docs
       - git add docs
-      - git cm -m '[ci skip] build on circle ci'
+      - git commit -m 'build GitHubPaged on circle ci'
       - git push origin master
