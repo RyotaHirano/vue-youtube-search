@@ -1,0 +1,15 @@
+machine:
+  timezone: Asia/Tokyo
+  node:
+    version: 6.10.2
+  post:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+deployment:
+  publish:
+    branch: master
+    commands:
+      - yarn run build
+      - cp -f -R dist docs
+      - git add docs
+      - git cm -m '[ci skip] build on circle ci'
+      - git push origin master
