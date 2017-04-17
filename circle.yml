@@ -19,3 +19,6 @@ deployment:
       - git add docs
       - git commit -m 'build GitHubPaged on circle ci'
       - git push origin master -f
+test:
+  override:
+    - yarn run unit && yarn run type
