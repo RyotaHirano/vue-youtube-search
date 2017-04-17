@@ -8,6 +8,13 @@ general:
   branches:
     ignore:
       - docs
+dependencies:
+  pre:
+    - yarn --version
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
 deployment:
   publish:
     branch: master
@@ -17,7 +24,7 @@ deployment:
       - git config --global user.name  "CircleCI"
       - git config --global user.email "circleci@gh-pages.com"
       - git add .
-      - git commit -m 'build GitHubPaged on circle ci'
+      - git commit -m '[ci skip] build GitHubPaged on circle ci'
       - git push origin master -f
 test:
   override:
