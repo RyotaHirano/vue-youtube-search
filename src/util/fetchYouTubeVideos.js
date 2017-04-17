@@ -1,7 +1,9 @@
+// @flow
+
 const API_YOUTUBE_URL: string = 'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
 const API_YOUTUBE_KEY: string = 'AIzaSyD3UHH4HeY7ki2njecykZ2xMx9xToqgYNM';
 
-export default function fetchYouTubeVideos(state) {
+export default function fetchYouTubeVideos(state: Object) {
   return fetch(`${API_YOUTUBE_URL}&key=${API_YOUTUBE_KEY}&q=${state.searchText}`)
     .then((response) => {
       // response.json() is Promise Object
