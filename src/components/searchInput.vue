@@ -8,6 +8,7 @@
 
 <script>
   import { debounce } from 'lodash'
+  import U_fetchYouTubeVideos from '../util/fetchYouTubeVideos'
   const inputDebounceTimer = 1000;
 
   export default {
@@ -32,7 +33,7 @@
       },
       updateSearchText: debounce(function(e) {
         if(e.target.value !== '') {
-          this.$store.dispatch('fetchYouTubeVideos');
+          U_fetchYouTubeVideos(this.$store)
         }
       }, inputDebounceTimer),
       focusInput: function() {

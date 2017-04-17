@@ -2,8 +2,6 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
-import 'whatwg-fetch'
-import U_fetchYouTubeVideos from '../util/fetchYouTubeVideos'
 
 Vue.use(Vuex);
 
@@ -26,17 +24,20 @@ const state: {
 };
 
 export const mutations = {
-  fetchYouTubeVideos(state: Object) {
-    U_fetchYouTubeVideos(state)
-  },
   resetFetchVideos(state: Object) {
     state.videos = []
+  },
+  updateFetchVideos(state: Object, videos: Array<mixed>) {
+    state.videos = videos
   },
   updateSearchText(state: Object, text: string) {
     state.searchText = text
   },
   updateLoadedVideoNum(state: Object) {
     state.loadedVideoNum += 1
+  },
+  resetLoaddedVideoNum(state: Object) {
+    state.loadedVideoNum = 0
   },
   allowShowVideos(state: Object, bool: boolean) {
     state.allowShowVideos = bool
@@ -47,20 +48,26 @@ export const mutations = {
   isLoadingVideos(state: Object, bool: boolean) {
     state.isLoadingVideos = bool
   },
+  updateHitVideo(state: Object, bool: boolean) {
+    state.hitVideo = bool
+  }
 };
 
 const actions = {
-  fetchYouTubeVideos({ commit }) {
-    commit('fetchYouTubeVideos')
-  },
   resetFetchVideos({ commit }) {
     commit('resetFetchVideos')
+  },
+  updateFetchVideos({ commit }, videos) {
+    commit('updateFetchVideos', videos)
   },
   updateSearchText({ commit }, text) {
     commit('updateSearchText', text)
   },
   updateLoadedVideoNum({ commit }) {
     commit('updateLoadedVideoNum')
+  },
+  resetLoaddedVideoNum({ commit }) {
+    commit('resetLoaddedVideoNum')
   },
   allowShowVideos({ commit }, bool) {
     commit('allowShowVideos', bool)
@@ -70,6 +77,9 @@ const actions = {
   },
   isLoadingVideos({ commit }, bool) {
     commit('isLoadingVideos', bool)
+  },
+  updateHitVideo({ commit }, bool) {
+    commit('updateHitVideo', bool)
   },
 };
 
