@@ -60,7 +60,7 @@
 
   .c-input-wrapper {
     width: 100%;
-    max-width: 850px;
+    max-width: 960px;
     margin: 40px auto 0;
     display: block;
     position: relative;

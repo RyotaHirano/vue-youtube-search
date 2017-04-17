@@ -26,7 +26,7 @@
 <style lang="scss" scoped>
   // none videos
   .l-none-videos-msg {
-    max-width: 850px;
+    max-width: 960px;
     margin: 40px auto;
 
     @media screen and (max-width: 960px) {

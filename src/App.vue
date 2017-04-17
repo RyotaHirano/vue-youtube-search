@@ -3,16 +3,23 @@
     <header class="header">
       <h1>Youtube Search</h1>
     </header>
-    <search-input></search-input>
-    <router-view></router-view>
+    <div class="l-container">
+      <sidebar></sidebar>
+      <div class="l-main">
+        <search-input></search-input>
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+  import sidebar from './components/Sidebar'
   import searchInput from './components/searchInput'
   export default {
     name: 'app',
     components: {
+      sidebar,
       searchInput
     }
   }
@@ -42,7 +49,7 @@
 
   .header {
     width: 100%;
-    max-width: 850px;
+    max-width: 960px;
     height: 40px;
     margin: 10px auto;
 
@@ -63,5 +70,17 @@
         font-size: 20px;
       }
     }
+  }
+
+  .l-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .l-main {
+    width: 100%;
   }
 </style>

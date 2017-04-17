@@ -13,6 +13,7 @@ const state: {
   isFocusSearchInput: boolean,
   isLoadingVideos: boolean,
   hitVideo: boolean,
+  historySearchWords: Array<string>,
 } = {
   videos: [],
   loadedVideoNum: 0,
@@ -21,6 +22,7 @@ const state: {
   isFocusSearchInput: false,
   isLoadingVideos: false,
   hitVideo: false,
+  historySearchWords: [],
 };
 
 export const mutations = {
@@ -50,7 +52,10 @@ export const mutations = {
   },
   updateHitVideo(state: Object, bool: boolean) {
     state.hitVideo = bool
-  }
+  },
+  updateHistorySearchWords(state: Object, word: string) {
+    state.historySearchWords.push(word)
+  },
 };
 
 const actions = {
@@ -80,6 +85,9 @@ const actions = {
   },
   updateHitVideo({ commit }, bool) {
     commit('updateHitVideo', bool)
+  },
+  updateHistorySearchWords({ commit }, word) {
+    commit('updateHistorySearchWords', word)
   },
 };
 

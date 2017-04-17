@@ -40,7 +40,7 @@
 <style lang="scss" scoped>
   .c-list-item {
     width: 100%;
-    max-width: 850px;
+    max-width: 960px;
     margin: 0 auto;
     opacity: 0;
     transition: none;
