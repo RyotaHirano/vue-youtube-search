@@ -16,8 +16,11 @@
   .c-search-item {
     font-size: 14px;
     font-style: italic;
+    word-break: break-all;
+    padding-bottom: 5px;
     & + & {
-      margin-top: 5px;
+      padding-top: 5px;
+      border-top: solid 1px #eee;
     }
   }
 </style>
