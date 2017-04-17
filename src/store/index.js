@@ -5,7 +5,25 @@ import Vuex from 'vuex'
 import 'whatwg-fetch'
 import U_fetchYouTubeVideos from '../util/fetchYouTubeVideos'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
+
+const state: {
+  videos: Array<mixed>,
+  loadedVideoNum: number,
+  allowShowVideos: boolean,
+  searchText: string,
+  isFocusSearchInput: boolean,
+  isLoadingVideos: boolean,
+  hitVideo: boolean,
+} = {
+  videos: [],
+  loadedVideoNum: 0,
+  allowShowVideos: false,
+  searchText: '',
+  isFocusSearchInput: false,
+  isLoadingVideos: false,
+  hitVideo: false,
+};
 
 export const mutations = {
   fetchYouTubeVideos(state: Object) {
@@ -56,17 +74,9 @@ const actions = {
 };
 
 const store = new Vuex.Store({
-  state: {
-    videos: [],
-    loadedVideoNum: 0,
-    allowShowVideos: false,
-    searchText: '',
-    isFocusSearchInput: false,
-    isLoadingVideos: false,
-    hitVideo: false,
-  },
+  state,
   mutations,
   actions,
-})
+});
 
 export default store
