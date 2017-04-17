@@ -10,6 +10,6 @@ deployment:
     commands:
       - yarn run build
       - cp -f -R dist docs
-      - git add docs
+      - git add .
       - git commit -m 'build GitHubPaged on circle ci'
       - git push origin master
