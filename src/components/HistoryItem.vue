@@ -1,5 +1,5 @@
 <template>
-  <li class="c-search-item">
+  <li class="c-history-item">
     {{ word }}
   </li>
 </template>
@@ -13,7 +13,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .c-search-item {
+  .c-history-item {
     font-size: 14px;
     font-style: italic;
     word-break: break-all;

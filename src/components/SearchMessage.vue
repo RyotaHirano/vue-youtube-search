@@ -28,6 +28,7 @@
   .l-none-videos-msg {
     max-width: 960px;
     margin: 40px auto;
+    word-break: break-all;
 
     @media screen and (max-width: 960px) {
       width: auto;
