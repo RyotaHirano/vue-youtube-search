@@ -1,8 +1,8 @@
 {
-  "name": "vue-youtube-gallery",
+  "name": "vue-youtube-search",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "RyotaHirano <hirano@tsumikiinc.com>",
+  "author": "RyotaHirano",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
