@@ -1,33 +1,35 @@
 <template>
   <li class="c-history-item"
-      v-html="this.replaceWords(word)"
+      v-html="replaceWords(word)"
   >
   </li>
 </template>
 
 <script>
-  import replaceWords from '../util/replaceWords'
   import randomShow from '../util/randomShow'
+  import replaceWords from '../util/replaceWords'
 
   export default {
     props: {
-      word: String
+      word: String,
     },
     methods: {
       replaceWords: function(word) {
-        const el = replaceWords(word);
-        this.$store.state.historyTextTimer = setTimeout(() => {
-          this.randomShow(this.$el);
-        }, 2000);
-        return el;
+        return replaceWords(word);
       },
-      randomShow: function(el) {
+      historySearchWordRandomShow: function(el) {
         const targets = el.querySelectorAll(`.u-random-word`);
-        targets.forEach((el, i) => {
-          new randomShow(el);
-        })
+        this.$store.state.historyTextTimer = setTimeout(() => {
+          targets.forEach((el, i) => {
+            new randomShow(el);
+          });
+          this.$store.dispatch('clearHistoryTextTimer')
+        }, 1500)
       },
-    }
+    },
+    mounted() {
+      this.historySearchWordRandomShow(this.$el);
+    },
   }
 </script>
 
@@ -39,7 +41,6 @@
     padding-bottom: 5px;
     & + & {
       padding-top: 5px;
-      border-top: solid 1px #eee;
     }
   }
 
@@ -74,7 +75,7 @@
     &--3 {
       &::before {
         opacity: 0;
-        /*display: none;*/
+        display: none;
       }
     }
   }

@@ -10,7 +10,6 @@ export default function fetchYouTubeVideos(store: Object) {
       return response.json().then(data => {
         store.dispatch('resetLoaddedVideoNum');
         store.dispatch('allowShowVideos', false);
-        store.dispatch('updateHistorySearchWords', store.state.searchText);
         if(data.items.length > 0) {
           store.dispatch('updateHitVideo', true);
           store.dispatch('updateFetchVideos', data.items);

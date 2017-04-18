@@ -28,11 +28,12 @@
       videoLoaded: function() {
         this.$store.dispatch('updateLoadedVideoNum');
         if(allVideoIsLoaded(this.$store.state.loadedVideoNum, this.$store.state.videos.length)) {
+          this.$store.dispatch('updateHistorySearchWords', this.$store.state.searchText);
           return this.$store.dispatch('allowShowVideos', true)
         } else {
           return false
         }
-      }
+      },
     }
   }
 </script>

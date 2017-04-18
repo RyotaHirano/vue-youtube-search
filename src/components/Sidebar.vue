@@ -7,7 +7,7 @@
       <ul class="c-history-list">
         <history-item
           v-for="(word, key) in getHistorySearchWords"
-          :word="word"
+          :word=word
           :key="key"
         >
         </history-item>
