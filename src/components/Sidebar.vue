@@ -39,22 +39,33 @@
     margin-right: 50px;
 
     @media screen and (max-width: 960px) {
+      width: 120px;
       margin-right: 0;
+      padding: 0 15px;
     }
   }
 
   .c-sidebar {
     padding-top:84px;
+    @media screen and (max-width: 960px) {
+      padding-top: 40px;
+    }
   }
 
   .c-history-title {
-    font-size: 1em;
+    font-size: 16px;
     line-height: 1.4;
+    @media screen and (max-width: 960px) {
+      font-size: 14px;
+    }
   }
 
   .c-history-list {
     list-style: none;
     margin: 0;
     padding: 20px 15px;
+    @media screen and (max-width: 960px) {
+      padding: 10px;
+    }
   }
 </style>
