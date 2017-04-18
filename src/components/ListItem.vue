@@ -1,8 +1,18 @@
-<template lang="pug">
-  .c-list-item(:class="listItemClassObject")
-    h2.c-movie-title {{video.title}}
-    .c-movie
-      iframe(width="560" height="315" v-bind:src="youtubeUrl" v-on:load="videoLoaded()" frameborder="0" allowfullscreen)
+<template>
+  <div class="c-list-item"
+       :class="listItemClassObject"
+  >
+    <h2 class="c-movie-title"
+        v-once
+    >
+      {{video.title}}
+    </h2>
+    <div class="c-movie"
+         v-once
+    >
+      <iframe width="560" height="315" v-bind:src="youtubeUrl" v-on:load="videoLoaded()" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
   <li class="c-history-item"
       v-html="replaceWords(word)"
+      v-once
   >
   </li>
 </template>

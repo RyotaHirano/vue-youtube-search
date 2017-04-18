@@ -8,7 +8,9 @@
       <div class="l-preloader"
            :class="pseudoLoaderClass()"
       >
-        <span class="c-preloader"></span>
+        <span class="c-preloader"
+              v-once
+        ></span>
       </div>
     </div>
     <div
@@ -130,7 +132,7 @@
     width: 100%;
     margin-top: 40px;
     margin-bottom: 40px;
-    padding: 0 30px;
+    padding: 0;
 
     @media screen and (max-width: 960px) {
       margin-top: 20px;

@@ -1,7 +1,9 @@
 <template>
   <div class="l-sidebar">
     <div class="c-sidebar">
-      <h3 class="c-history-title">
+      <h3 class="c-history-title"
+          v-once
+      >
         history
       </h3>
       <ul class="c-history-list">
