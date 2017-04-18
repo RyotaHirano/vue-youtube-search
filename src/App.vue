@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header class="header">
-      <h1>Youtube Search</h1>
+      <h1>Vue Youtube Search</h1>
     </header>
     <div class="l-container">
       <sidebar></sidebar>
