@@ -1,9 +1,9 @@
-# vue-youtube-gallery
+# vue-youtube-search
 
 > vue-cli sample project.
 
 ## DEMO
-https://ryotahirano.github.io/vue-youtube-gallery/
+https://ryotahirano.github.io/vue-youtube-search/
 
 ## Build Setup
 
