@@ -17,6 +17,7 @@ export default function fetchYouTubeVideos(store: Object) {
           store.dispatch('resetFetchVideos');
           store.dispatch('isLoadingVideos', false);
           store.dispatch('updateHitVideo', false);
+          store.dispatch('updateHistorySearchWords', store.state.searchText);
         }
       })
     })
