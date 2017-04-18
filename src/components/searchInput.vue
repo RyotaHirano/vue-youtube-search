@@ -29,11 +29,15 @@
 
         if (e.target.value !== '') {
           this.$store.dispatch('isLoadingVideos', true)
+        } else {
+          this.$store.dispatch('clearHistoryTextTimer')
         }
       },
       updateSearchText: debounce(function(e) {
         if(e.target.value !== '') {
           U_fetchYouTubeVideos(this.$store)
+        } else {
+          this.$store.dispatch('clearHistoryTextTimer')
         }
       }, inputDebounceTimer),
       focusInput: function() {

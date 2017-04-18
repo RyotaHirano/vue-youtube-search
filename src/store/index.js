@@ -14,6 +14,7 @@ const state: {
   isLoadingVideos: boolean,
   hitVideo: boolean,
   historySearchWords: Array<string>,
+  historyTextTimer: null,
 } = {
   videos: [],
   loadedVideoNum: 0,
@@ -23,6 +24,7 @@ const state: {
   isLoadingVideos: false,
   hitVideo: false,
   historySearchWords: [],
+  historyTextTimer: null
 };
 
 export const mutations = {
@@ -56,6 +58,9 @@ export const mutations = {
   updateHistorySearchWords(state: Object, word: string) {
     state.historySearchWords.push(word)
   },
+  clearHistoryTextTimer(state: Object) {
+    state.historyTextTimer = null
+  },
 };
 
 const actions = {
@@ -88,6 +93,9 @@ const actions = {
   },
   updateHistorySearchWords({ commit }, word) {
     commit('updateHistorySearchWords', word)
+  },
+  clearHistoryTextTimer({ commit }) {
+    commit('clearHistoryTextTimer')
   },
 };
 
