@@ -34,6 +34,10 @@
     font-family: 'Roboto Mono', monospace;
   }
 
+  html {
+    overflow-y: scroll;
+  }
+
   * {
     box-sizing: border-box;
   }
