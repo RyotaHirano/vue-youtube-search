@@ -59,7 +59,7 @@ export const mutations = {
     state.historySearchWords.push(word)
   },
   clearHistoryTextTimer(state: Object) {
-    clearTimeout(state.historyTextTimer);
+    window.clearTimeout(state.historyTextTimer);
     state.historyTextTimer = null
   },
 };
