@@ -20,12 +20,13 @@
       },
       historySearchWordRandomShow: function(el) {
         const targets = el.querySelectorAll(`.u-random-word`);
-        this.$store.state.historyTextTimer = setTimeout(() => {
+        const timer = setTimeout(() => {
           targets.forEach((el, i) => {
             new randomShow(el);
           });
           this.$store.dispatch('clearHistoryTextTimer')
-        }, 1500)
+        }, 1500);
+        this.$store.dispatch('updateHistoryTextTimer', timer)
       },
     },
     mounted() {

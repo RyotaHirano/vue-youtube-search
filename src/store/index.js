@@ -58,6 +58,9 @@ export const mutations = {
   updateHistorySearchWords(state: Object, word: string) {
     state.historySearchWords.push(word)
   },
+  updateHistoryTextTimer(state: Object, timer: number) {
+    state.historyTextTimer = timer
+  },
   clearHistoryTextTimer(state: Object) {
     window.clearTimeout(state.historyTextTimer);
     state.historyTextTimer = null
@@ -94,6 +97,9 @@ const actions = {
   },
   updateHistorySearchWords({ commit }, word) {
     commit('updateHistorySearchWords', word)
+  },
+  updateHistoryTextTimer({ commit }, timer) {
+    commit('updateHistoryTextTimer', timer)
   },
   clearHistoryTextTimer({ commit }) {
     commit('clearHistoryTextTimer')
