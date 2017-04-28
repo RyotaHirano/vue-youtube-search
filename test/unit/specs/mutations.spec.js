@@ -13,44 +13,44 @@ import mutations from '@/store/mutations'
 // })
 
 describe('mutations', () => {
-  it('updateSearchText', () => {
+  it('UPDATE_SEARCH_TEXT', () => {
     const state = {
       searchText: ''
     }
     const text = 'test';
-    mutations.updateSearchText(state, text)
+    mutations.UPDATE_SEARCH_TEXT(state, text)
     assert(state.searchText === text)
   })
 
-  it('updateLoadedVideoNum', () => {
+  it('UPDATE_LOADED_VIDEO_NUM', () => {
     const state = {
       loadedVideoNum: 0
     };
-    mutations.updateLoadedVideoNum(state)
+    mutations.UPDATE_LOADED_VIDEO_NUM(state)
     assert(state.loadedVideoNum === 1)
   })
 
-  it('allowShowVideos', () => {
+  it('UPDATE_ALLOW_SHOW_VIDEOS', () => {
     const state = {
       allowShowVideos: false
     }
-    mutations.allowShowVideos(state, true)
+    mutations.UPDATE_ALLOW_SHOW_VIDEOS(state, true)
     assert(state.allowShowVideos === true)
   })
 
-  it('isFocusSearchInput', () => {
+  it('UPDATE_IS_FOCUS_SEARCH_INPUT', () => {
     const state = {
       isFocusSearchInput: false
     }
-    mutations.isFocusSearchInput(state, true)
+    mutations.UPDATE_IS_FOCUS_SEARCH_INPUT(state, true)
     assert(state.isFocusSearchInput === true)
   })
 
-  it('isLoadingVideos', () => {
+  it('UPDATE_IS_LOADING_VIDEOS', () => {
     const state = {
       isLoadingVideos: false
     }
-    mutations.isLoadingVideos(state, true)
+    mutations.UPDATE_IS_LOADING_VIDEOS(state, true)
     assert(state.isLoadingVideos === true)
   })
 })
