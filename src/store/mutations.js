@@ -1,3 +1,5 @@
+// @flow
+
 const mutations = {
   resetFetchVideos(state: Object) {
     state.videos = []
