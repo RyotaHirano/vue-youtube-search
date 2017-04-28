@@ -1,6 +1,29 @@
 // @flow
 
+const API_YOUTUBE_URL: string = 'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
+const API_YOUTUBE_KEY: string = 'AIzaSyD3UHH4HeY7ki2njecykZ2xMx9xToqgYNM';
+import 'whatwg-fetch'
+
 const actions = {
+  fetchYouTubeVideos({ dispatch, state }: Object) {
+    fetch(`${API_YOUTUBE_URL}&key=${API_YOUTUBE_KEY}&q=${state.searchText}`)
+      .then((response) => {
+        // response.json() is Promise Object
+        response.json().then(data => {
+          dispatch('resetLoaddedVideoNum');
+          dispatch('allowShowVideos', false);
+          if(data.items.length > 0) {
+            dispatch('updateHitVideo', true);
+            dispatch('updateFetchVideos', data.items);
+          } else {
+            dispatch('resetFetchVideos');
+            dispatch('isLoadingVideos', false);
+            dispatch('updateHitVideo', false);
+            dispatch('updateHistorySearchWords', state.searchText);
+          }
+        })
+      })
+  },
   resetFetchVideos({ commit }: Object) {
     commit('CLEAR_FETCH_VIDEOS')
   },

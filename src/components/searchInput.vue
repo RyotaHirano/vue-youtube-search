@@ -33,7 +33,7 @@
       },
       updateSearchText: debounce(function(e) {
         if(e.target.value !== '') {
-          U_fetchYouTubeVideos(this.$store)
+          this.$store.dispatch('fetchYouTubeVideos')
         }
       }, inputDebounceTimer),
       focusInput: function() {
