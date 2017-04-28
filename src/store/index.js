@@ -5,6 +5,9 @@ import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
 
+export const API_YOUTUBE_URL: string = 'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
+export const API_YOUTUBE_KEY: string = 'AIzaSyD3UHH4HeY7ki2njecykZ2xMx9xToqgYNM';
+
 Vue.use(Vuex);
 
 const state: {
