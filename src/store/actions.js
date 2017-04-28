@@ -2,40 +2,40 @@
 
 const actions = {
   resetFetchVideos({ commit }: Object) {
-    commit('resetFetchVideos')
+    commit('CLEAR_FETCH_VIDEOS')
   },
   updateFetchVideos({ commit }: Object, videos: Array<mixed>) {
-    commit('updateFetchVideos', videos)
+    commit('UPDATE_FETCH_VIDEOS', videos)
   },
   updateSearchText({ commit }: Object, text: string) {
-    commit('updateSearchText', text)
+    commit('UPDATE_SEARCH_TEXT', text)
   },
   updateLoadedVideoNum({ commit }: Object) {
-    commit('updateLoadedVideoNum')
+    commit('UPDATE_LOADED_VIDEO_NUM')
   },
   resetLoaddedVideoNum({ commit }: Object) {
-    commit('resetLoaddedVideoNum')
+    commit('CLEAR_LOADED_VIDEO_NUM')
   },
   allowShowVideos({ commit }: Object, bool: boolean) {
-    commit('allowShowVideos', bool)
+    commit('UPDATE_ALLOW_SHOW_VIDEOS', bool)
   },
   isFocusSearchInput({ commit }: Object, bool: boolean) {
-    commit('isFocusSearchInput', bool)
+    commit('UPDATE_IS_FOCUS_SEARCH_INPUT', bool)
   },
   isLoadingVideos({ commit }: Object, bool: boolean) {
-    commit('isLoadingVideos', bool)
+    commit('UPDATE_IS_LOADING_VIDEOS', bool)
   },
   updateHitVideo({ commit }: Object, bool: boolean) {
-    commit('updateHitVideo', bool)
+    commit('UPDATE_HIT_VIDEO', bool)
   },
   updateHistorySearchWords({ commit }: Object, word: string) {
-    commit('updateHistorySearchWords', word)
+    commit('UPDATE_HISTORY_SEARCH_WORDS', word)
   },
   updateHistoryTextTimer({ commit }: Object, timer: number) {
-    commit('updateHistoryTextTimer', timer)
+    commit('UPDATE_HISTORY_TEXT_TIMER', timer)
   },
   clearHistoryTextTimer({ commit }: Object) {
-    commit('clearHistoryTextTimer')
+    commit('CLEAR_HISTORY_TEXT_TIMER')
   },
 };
 
