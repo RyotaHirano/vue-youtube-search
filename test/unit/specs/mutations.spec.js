@@ -1,5 +1,5 @@
 import assert from 'power-assert'
-import { mutations } from '@/store'
+import mutations from '@/store/mutations'
 
 // describe('fetch mutations', () => {
 //   it('fetchYouTubeVideos', done => {
