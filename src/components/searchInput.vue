@@ -8,7 +8,6 @@
 
 <script>
   import { debounce } from 'lodash'
-  import U_fetchYouTubeVideos from '../util/fetchYouTubeVideos'
   const inputDebounceTimer = 1000;
 
   export default {
