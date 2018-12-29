@@ -1,12 +1,16 @@
 // @flow
 
-import Vue from 'vue'
-import Vuex from 'vuex'
-import mutations from './mutations'
-import actions from './actions'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import mutations from './mutations';
+import actions from './actions';
 
-export const API_YOUTUBE_URL: string = 'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
-export const API_YOUTUBE_KEY: string = 'AIzaSyD3UHH4HeY7ki2njecykZ2xMx9xToqgYNM';
+console.log(process.env);
+
+export const API_YOUTUBE_URL: string =
+  'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
+export const API_YOUTUBE_KEY: string =
+  'AIzaSyASIm-ZzIu2OJ9wHZXUyPk-_rKVUmOS1fQ';
 
 Vue.use(Vuex);
 
@@ -19,7 +23,7 @@ const state: {
   isLoadingVideos: boolean,
   hitVideo: boolean,
   historySearchWords: Array<string>,
-  historyTextTimer: null,
+  historyTextTimer: null
 } = {
   videos: [],
   loadedVideoNum: 0,
@@ -35,7 +39,7 @@ const state: {
 const store = new Vuex.Store({
   state,
   mutations,
-  actions,
+  actions
 });
 
-export default store
+export default store;
