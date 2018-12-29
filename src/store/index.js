@@ -7,10 +7,9 @@ import actions from './actions';
 
 console.log(process.env);
 
-export const API_YOUTUBE_URL: string =
-  'https://www.googleapis.com/youtube/v3/search?part=snippet&safeSearch=strict';
-export const API_YOUTUBE_KEY: string =
-  'AIzaSyASIm-ZzIu2OJ9wHZXUyPk-_rKVUmOS1fQ';
+export const API_YOUTUBE_URL: string = process.env.API_YOUTUBE_URL;
+export const API_YOUTUBE_KEY: string = process.env.API_YOUTUBE_KEY;
+('');
 
 Vue.use(Vuex);
 
