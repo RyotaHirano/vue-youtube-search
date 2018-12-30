@@ -5,11 +5,8 @@ import Vuex from 'vuex';
 import mutations from './mutations';
 import actions from './actions';
 
-console.log(process.env);
-
 export const API_YOUTUBE_URL: string = process.env.API_YOUTUBE_URL;
 export const API_YOUTUBE_KEY: string = process.env.API_YOUTUBE_KEY;
-('');
 
 Vue.use(Vuex);
 
