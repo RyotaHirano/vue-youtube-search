@@ -2,7 +2,7 @@
 
 # build
 yarn run build
-mkdir docs
+mkdir -p docs
 chmod -R 755 docs
 cp -f -R dist/* docs
 
