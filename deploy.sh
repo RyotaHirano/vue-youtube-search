@@ -2,7 +2,8 @@
 
 # build
 yarn run build
-
+mkdir docs
+chmod -R 755 docs
 cp -f -R dist/* docs
 
 git config --global user.name  "CircleCI"
