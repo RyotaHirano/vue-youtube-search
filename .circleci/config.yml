@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/vue-youtube-search
     docker:
-      - image: node:8.11
+      - image: circleci/node:8.11.2
         environment:
           TZ: "/usr/share/zoneinfo/Asia/Tokyo"
           LANG: ja_JP.UTF-8
