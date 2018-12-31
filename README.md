@@ -1,19 +1,29 @@
-# vue-youtube-search
+# vue-youtube-search-cli3
 
-> vue-cli sample project.
+## Project setup
+```
+yarn install
+```
 
-## DEMO
-https://ryotahirano.github.io/vue-youtube-search/
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
 
-## Build Setup
-
-``` bash
-# install dependencies
-yarn i
-
-# serve with hot reload at localhost:8080
-yarn run dev
-
-# build for production with minification
+### Compiles and minifies for production
+```
 yarn run build
 ```
+
+### Run your tests
+```
+yarn run test
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

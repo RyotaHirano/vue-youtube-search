@@ -21,7 +21,7 @@
       historySearchWordRandomShow: function(el) {
         const targets = el.querySelectorAll(`.u-random-word`);
         const timer = setTimeout(() => {
-          targets.forEach((el, i) => {
+          targets.forEach(el => {
             new randomShow(el);
           });
           this.$store.dispatch('clearHistoryTextTimer')
