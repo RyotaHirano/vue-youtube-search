@@ -1,30 +1,31 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/vue-youtube-search
     docker:
-      - image: circleci/node:8.11.2
+        - image: circleci/node:8.11.2
     steps:
       - checkout
       - run:
-        name: update-yarn
-        command: yarn install -g yarn@latest
+          name: update-yarn
+          command: yarn install -g yarn@latest
       - restore_cache:
-        name: Restore Yarn Package Cache
-        keys:
-          - yarn-packages-{{ checksum "yarn.lock" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-        name: Install Dependencies
-        command: yarn install --frozen-lockfile
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
-        name: Save Yarn Package Cache
-        key: yarn-packages-{{ checksum "yarn.lock" }}
-        paths:
-          - ~/.cache/yarn
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
       - run:
-        name: Deploy development branch to master
-        command: |
-          chmod +x deploy.sh
-          ./deploy.sh
+          name: Deploy development branch to master
+          command: |
+            chmod +x deploy.sh
+            ./deploy.sh
 workflows:
   version: 2
   build:
