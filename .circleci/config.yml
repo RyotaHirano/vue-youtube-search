@@ -26,8 +26,3 @@ jobs:
           command: |
             chmod +x deploy.sh
             ./deploy.sh
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build
