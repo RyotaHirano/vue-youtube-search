@@ -1,4 +1,6 @@
-# vue-youtube-search-cli3
+# vue-youtube-search
+
+vue cli version 3.
 
 ## Project setup
 ```
