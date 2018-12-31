@@ -1,16 +1,8 @@
 version: 2
-
 jobs:
   build:
-    working_directory: ~/vue-youtube-search
     docker:
       - image: circleci/node:8.11.2
-        environment:
-          TZ: "/usr/share/zoneinfo/Asia/Tokyo"
-          LANG: ja_JP.UTF-8
-          LC_ALL: C.UTF-8
-          LANGUAGE: ja_JP.UTF-8
-          DEPLOY_BRANCH: master
     steps:
       - checkout
       - run:
@@ -33,3 +25,8 @@ jobs:
         command: |
           chmod +x deploy.sh
           ./deploy.sh
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
