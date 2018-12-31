@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: update-yarn
-          command: yarn install -g yarn@latest
+          command: yarn global add yarn@latest
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
