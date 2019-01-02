@@ -19,13 +19,14 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   import HistoryItem from '../components/HistoryItem.vue'
 
   export default {
     computed: {
-      getHistorySearchWords: function() {
-        return this.$store.state.historySearchWords
-      }
+      ...mapGetters([
+        'getHistorySearchWords'
+      ])
     },
     components: {
       HistoryItem

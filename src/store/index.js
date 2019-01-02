@@ -1,5 +1,3 @@
-// @flow
-
 import Vue from 'vue';
 import Vuex from 'vuex';
 import mutations from './mutations';
@@ -22,10 +20,17 @@ const state = {
   historyTextTimer: null
 };
 
+const getters = {
+  getHistorySearchWords: state => {
+    return state.historySearchWords;
+  }
+};
+
 const store = new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
+  getters
 });
 
 export default store;
