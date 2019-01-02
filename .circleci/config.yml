@@ -51,6 +51,11 @@ jobs:
                 name: Install Dependencies
                 command: yarn install --frozen-lockfile
             - run:
+                name: Setup Environment Variables
+                command: |
+                    echo 'export VUE_APP_API_YOUTUBE_KEY="$VUE_APP_API_YOUTUBE_KEY"' >> $BASH_ENV
+                    echo 'export VUE_APP_API_YOUTUBE_URL="$VUE_APP_API_YOUTUBE_URL"' >> $BASH_ENV
+            - run:
                 name: Deploy development branch to master
                 command: |
                     chmod +x deploy.sh

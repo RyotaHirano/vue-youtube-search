@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+echo VUE_APP_API_YOUTUBE_KEY
+echo VUE_APP_API_YOUTUBE_URL
+
 # build
 yarn run build
 mkdir -p docs
