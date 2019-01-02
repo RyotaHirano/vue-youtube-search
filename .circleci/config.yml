@@ -53,8 +53,8 @@ jobs:
             - run:
                 name: Setup Environment Variables
                 command: |
-                    echo 'export VUE_APP_API_YOUTUBE_KEY="$VUE_APP_API_YOUTUBE_KEY"' >> $BASH_ENV
-                    echo 'export VUE_APP_API_YOUTUBE_URL="$VUE_APP_API_YOUTUBE_URL"' >> $BASH_ENV
+                    echo ${VUE_APP_API_YOUTUBE_KEY} > ~/.env
+                    echo ${VUE_APP_API_YOUTUBE_URL} > ~/.env
             - run:
                 name: Deploy development branch to master
                 command: |
