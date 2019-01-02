@@ -32,6 +32,9 @@ jobs:
                 keys:
                     - yarn-packages-{{ checksum "yarn.lock" }}
             - run:
+                name: Install Dependencies
+                command: yarn install --frozen-lockfile
+            - run:
                 name: unit test
                 command: yarn run test:unit
     deploy:
