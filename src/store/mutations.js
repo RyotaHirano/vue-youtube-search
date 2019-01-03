@@ -1,5 +1,3 @@
-// @flow
-
 const mutations = {
   CLEAR_FETCH_VIDEOS(state) {
     state.videos = [];

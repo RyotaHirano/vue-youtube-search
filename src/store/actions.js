@@ -1,5 +1,3 @@
-// @flow
-
 import 'whatwg-fetch';
 import { API_YOUTUBE_URL, API_YOUTUBE_KEY } from './index';
 

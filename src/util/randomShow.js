@@ -1,4 +1,3 @@
-// @flow
 export default class randomShow {
   constructor(el) {
     this.el = el;
