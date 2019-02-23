@@ -4,7 +4,7 @@
 
 DEMO: https://ryotahirano.github.io/vue-youtube-search/
 
-vue cli version 3.
+using vue-cli version 3.
 
 ## Project setup
 ```
@@ -23,7 +23,7 @@ yarn run build
 
 ### Run your tests
 ```
-yarn run test
+yarn run test:unit
 ```
 
 ### Lints and fixes files
