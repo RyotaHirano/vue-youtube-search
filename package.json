@@ -9,7 +9,7 @@
     "test:unit": "jest --clearCache && vue-cli-service test:unit"
   },
   "dependencies": {
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
     "sass-loader": "7.1.0",
     "vue": "2.6.8",
     "vue-router": "3.0.2",
