@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+echo "Start: Deploy github page."
+
 # build
 yarn run build
 rm -rf docs
@@ -13,4 +15,4 @@ git add .
 git commit -m '[ci skip] build GitHubPaged on circle ci'
 git push origin HEAD -f
 
-echo "Deploy github page."
+echo "End: Deploy github page."
