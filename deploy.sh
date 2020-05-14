@@ -15,8 +15,14 @@ echo "copy dist to docs finish."
 
 git config --global user.name  "CircleCI"
 git config --global user.email "circleci@gh-pages.com"
-git add .
-git commit -m '[ci skip] build GitHubPaged on circle ci'
-git push origin HEAD -f
+
+if [[ `git status --porcelain` ]]; then
+  echo "Has changes."
+  git add .
+  git commit -m '[ci skip] build GitHubPaged on circle ci.'
+  git push origin HEAD -f
+else
+  echo "No changes."
+fi
 
 echo "End: Deploy github page."
