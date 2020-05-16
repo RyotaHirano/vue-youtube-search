@@ -4,7 +4,7 @@
 
 DEMO: https://ryotahirano.github.io/vue-youtube-search/
 
-using vue-cli version 3.
+using vue-cli version 4.
 
 ## Project setup
 ```
