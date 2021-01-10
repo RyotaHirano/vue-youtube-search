@@ -3,7 +3,7 @@ jobs:
     build:
         working_directory: ~/vue-youtube-search
         docker:
-            - image: circleci/node:12.16.3
+            - image: circleci/node:12.20.1
         steps:
             - checkout
             - run:
@@ -24,7 +24,7 @@ jobs:
     test:
         working_directory: ~/vue-youtube-search
         docker:
-            - image: circleci/node:12.16.3
+            - image: circleci/node:12.20.1
         steps:
             - checkout
             - restore_cache:
@@ -40,7 +40,7 @@ jobs:
     deploy:
         working_directory: ~/vue-youtube-search
         docker:
-            - image: circleci/node:12.16.3
+            - image: circleci/node:12.20.1
         steps:
             - checkout
             - restore_cache:
